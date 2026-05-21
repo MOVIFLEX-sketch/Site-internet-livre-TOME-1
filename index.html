@@ -533,10 +533,21 @@
     @media(max-width:768px){
       .accueil-hero-grid {
         grid-template-columns: 1fr !important;
-        gap: 32px !important;
+        gap: 28px !important;
       }
+      /* Couverture AVANT le texte sur mobile */
+      .accueil-book-col { order: -1; padding: 20px 0 0 !important; }
+      .accueil-text-col { order: 1; }
       .accueil-cta-btns { max-width: 100%; }
-      #page-accueil section:first-of-type { padding: 32px 0 40px !important; }
+
+      /* Effet livre mobile — centré, taille optimisée, perspective douce */
+      .accueil-book-col > div[style*="perspective"] {
+        transform: perspective(700px) rotateY(-8deg) !important;
+      }
+      .accueil-book-col img {
+        max-width: 260px !important;
+      }
+      #page-accueil section:first-of-type { padding: 24px 0 36px !important; }
     }
 
     /* Tablet 1024px */
@@ -775,7 +786,7 @@
         <div class="accueil-hero-grid">
 
           <!-- Gauche : Intro texte -->
-          <div>
+          <div class="accueil-text-col">
             <p class="eyebrow" style="margin-bottom:20px;">Nouveau · Disponible sur Amazon</p>
             <h1 class="t-hero" style="margin-bottom:20px;">
               Bougez Mieux<br>
@@ -825,7 +836,7 @@
           </div>
 
           <!-- Droite : Couverture livre effet 3D -->
-          <div style="position:relative;display:flex;justify-content:center;align-items:center;padding:40px 20px;">
+          <div class="accueil-book-col" style="position:relative;display:flex;justify-content:center;align-items:center;padding:40px 20px;">
 
             <!-- Halo décoratif -->
             <div style="position:absolute;inset:-40px;background:radial-gradient(circle,rgba(45,80,22,0.1) 0%,transparent 70%);border-radius:50%;pointer-events:none;"></div>
