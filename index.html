@@ -97,36 +97,36 @@
       box-shadow: 0 2px 16px rgba(0,0,0,0.15);
       transition: var(--tr);
     }
-    .hdr__left { display: flex; align-items: center; gap: 48px; }
-    .hdr__logo { height: 48px; width: auto; display: flex; align-items: center; }
-    .hdr__logo img { height: 48px; width: auto; mix-blend-mode: screen; }
-    .hdr__brand { font-family: system-ui, sans-serif; font-size: 1.2rem; font-weight: 900; letter-spacing: 0.06em; color: var(--blanc); }
+    .hdr__left { display: flex; align-items: center; gap: 32px; }
+    .hdr__logo { height: 40px; width: auto; display: flex; align-items: center; }
+    .hdr__logo img { height: 40px; width: auto; mix-blend-mode: screen; }
+    .hdr__brand { font-family: system-ui, sans-serif; font-size: 1.1rem; font-weight: 900; letter-spacing: 0.06em; color: var(--blanc); }
     .hdr__brand span { color: #A8D44E; }
-    .hdr__nav { display: flex; align-items: center; gap: 6px; }
+    .hdr__nav { display: flex; align-items: center; gap: 4px; }
     .hdr__nav a {
-      padding: 6px 14px; border-radius: var(--rf);
-      font-family: system-ui, sans-serif; font-size: 0.82rem; font-weight: 500;
-      color: rgba(255,255,255,0.8); transition: var(--tr);
+      padding: 6px 12px; border-radius: var(--rf);
+      font-family: system-ui, sans-serif; font-size: 0.78rem; font-weight: 500;
+      color: rgba(255,255,255,0.8); transition: var(--tr); white-space: nowrap;
     }
     .hdr__nav a:hover, .hdr__nav a.on { color: var(--blanc); background: rgba(255,255,255,0.12); }
     .hdr__right { display: flex; align-items: center; gap: 10px; }
     .hdr__btn-video {
-      display: flex; align-items: center; gap: 8px;
-      padding: 8px 18px; border-radius: var(--rf);
+      display: flex; align-items: center; gap: 6px;
+      padding: 7px 14px; border-radius: var(--rf);
       border: 1.5px solid rgba(255,255,255,0.4);
-      color: var(--blanc); font-family: system-ui, sans-serif; font-size: 0.8rem; font-weight: 600;
-      transition: var(--tr);
+      color: var(--blanc); font-family: system-ui, sans-serif; font-size: 0.76rem; font-weight: 600;
+      transition: var(--tr); white-space: nowrap;
     }
     .hdr__btn-video:hover { background: rgba(255,255,255,0.15); border-color: var(--blanc); }
     .hdr__btn-amazon {
-      display: flex; align-items: center; gap: 8px;
+      display: flex; align-items: center; gap: 7px;
       padding: 8px 18px; border-radius: var(--rf);
       background: var(--or); color: var(--blanc);
-      font-family: system-ui, sans-serif; font-size: 0.8rem; font-weight: 700;
-      transition: var(--tr);
+      font-family: system-ui, sans-serif; font-size: 0.78rem; font-weight: 700;
+      transition: var(--tr); white-space: nowrap;
     }
     .hdr__btn-amazon:hover { background: var(--or2); transform: translateY(-1px); }
-    .hdr__user { font-family: system-ui, sans-serif; font-size: 0.82rem; color: rgba(255,255,255,0.8); }
+    .hdr__user { font-family: system-ui, sans-serif; font-size: 0.78rem; color: rgba(255,255,255,0.8); white-space: nowrap; }
     .hdr__user strong { color: #A8D44E; }
     .hdr__burger { display: none; flex-direction: column; gap: 4px; padding: 8px; }
     .hdr__burger span { display: block; width: 20px; height: 2px; background: var(--blanc); border-radius: 2px; }
@@ -739,7 +739,7 @@
   <!-- Right CTAs -->
   <div class="hdr__right">
     <span class="hdr__user" id="hdr-user" style="display:none;">
-      Bonjour <strong id="hdr-name">—</strong>
+      Bonjour&nbsp;<strong id="hdr-name">—</strong>
     </span>
     <a href="https://www.amazon.fr/dp/VOTRE-ASIN-ICI?tag=VOTRE-TAG-AFFILIÉ" target="_blank" rel="noopener" class="hdr__btn-amazon" id="hdr-amazon-btn">
       <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M21.5 17.5c-.7.4-4.1 1.9-9.5 1.9s-9-.5-12.5-2.4c-.4-.2-.2-.6.1-.5 3 .8 5.9 1.1 8.9 1.1 4.5 0 8.5-.8 12-2.5.4-.2.7.1.9.4zm1.5-2.5c-.3-.4-2-1-3-1.2-.3-.1-.3-.4 0-.5 1.5-.5 4-.2 4.5.8.4.8-.8 2-1.5.9z"/></svg>
@@ -994,18 +994,6 @@
     </div>
   </section>
 
-  <!-- STATS -->
-  <section class="sec-sm" style="background:var(--beige2);">
-    <div class="wrap">
-      <div class="stats">
-        <div class="stat"><div class="stat__n">28</div><div class="stat__l">Exercices vidéo démontrés</div></div>
-        <div class="stat"><div class="stat__n">4</div><div class="stat__l">Zones anatomiques couvertes</div></div>
-        <div class="stat"><div class="stat__n">28j</div><div class="stat__l">Programme progressif structuré</div></div>
-        <div class="stat"><div class="stat__n">0 €</div><div class="stat__l">Inclus avec votre livre</div></div>
-      </div>
-    </div>
-  </section>
-
   <!-- FORM SECTION -->
   <section class="sec" id="formSection" style="background:var(--beige);">
     <div class="wrap">
@@ -1055,7 +1043,7 @@
               </div>
               <div class="fg">
                 <label class="flabel" for="inp-code">Code d'accès du livre</label>
-                <input class="finput" type="text" id="inp-code" placeholder="Ex : MOVIFLEX50"
+                <input class="finput" type="text" id="inp-code" placeholder="Votre code d'accès"
                        autocomplete="off" spellcheck="false" style="letter-spacing:0.08em;text-transform:uppercase;">
                 <p class="ferr" id="code-err">Code incorrect. Vérifiez le code indiqué dans votre livre MOVIFLEX.</p>
                 <p class="fhint">Retrouvez ce code dans les premières pages de votre livre.</p>
@@ -1081,22 +1069,22 @@
 ══════════════════════════════════════════ -->
 <div class="page" id="page-videos">
 
-  <!-- BOUTON FLOTTANT NAVIGATION RAPIDE -->
-  <div id="quickNavBtn" onclick="toggleQuickNav(event)"
+  <!-- BOUTON FLOTTANT NAVIGATION RAPIDE — button natif pour fiabilité desktop/mobile -->
+  <button id="quickNavBtn"
     style="position:fixed;bottom:28px;right:20px;z-index:800;
       width:52px;height:52px;border-radius:50%;
       background:var(--vert);color:#fff;
       display:none;align-items:center;justify-content:center;
       box-shadow:0 4px 20px rgba(45,80,22,0.45);
-      cursor:pointer;transition:all 0.25s;border:none;"
+      cursor:pointer;transition:all 0.25s;border:none;padding:0;"
     title="Navigation rapide">
-    <svg id="quickNavIcon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+    <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24">
       <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
       <line x1="8" y1="18" x2="21" y2="18"/>
       <line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/>
       <line x1="3" y1="18" x2="3.01" y2="18"/>
     </svg>
-  </div>
+  </button>
 
   <!-- PANNEAU LATÉRAL NAVIGATION RAPIDE -->
   <div id="quickNavPanel"
@@ -1196,12 +1184,8 @@
             <div class="divider-line"></div>
             <p class="t-lead" style="margin-top:16px;margin-bottom:28px;">Obtenez le kit et débloquez <strong style="color:var(--vert)">+20 vidéos bonus</strong> de renforcement progressif conçus par Sofiane.</p>
           </div>
-          <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+          <div>
             <button onclick="showPage('kit')" class="btn btn-or btn-lg">Découvrir le Kit →</button>
-            <div style="border-radius:12px;overflow:hidden;width:90px;height:90px;flex-shrink:0;box-shadow:var(--shadow);">
-              <img loading="lazy" src="KIT-Elastique.jpeg" alt="Kit Élastiques MOVIFLEX" style="width:100%;height:100%;object-fit:cover;"
-                   onerror="this.parentNode.style.background='var(--beige2)';this.style.display='none'">
-            </div>
           </div>
         </div>
 
@@ -1814,7 +1798,68 @@
   </div>
 </div>
 
-<!-- VIDEO MODAL -->
+<!-- ══════════════════════════════════════════
+     BARRE NAV BAS — Mobile uniquement
+     Grande zone de clic, icônes + texte, seniors-friendly
+══════════════════════════════════════════ -->
+<nav id="bottomNav" style="
+  position:fixed; bottom:0; left:0; right:0; z-index:900;
+  background:var(--vert); 
+  display:none;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+  padding-bottom: env(safe-area-inset-bottom, 0px);">
+
+  <button onclick="showPage('accueil')" class="bnav-btn" id="bnav-accueil">
+    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Accueil</span>
+  </button>
+
+  <button onclick="showPage('home')" class="bnav-btn" id="bnav-home">
+    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+    <span>Vidéos</span>
+  </button>
+
+  <button onclick="showPage('programme')" class="bnav-btn" id="bnav-prog">
+    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg>
+    <span>Programme</span>
+  </button>
+
+  <button onclick="showPage('kit')" class="bnav-btn" id="bnav-kit">
+    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+    <span>Produit</span>
+  </button>
+
+  <button onclick="showPage('support')" class="bnav-btn" id="bnav-faq">
+    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    <span>FAQ</span>
+  </button>
+
+</nav>
+
+<style>
+  .bnav-btn {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 3px; padding: 10px 4px 8px;
+    background: transparent; border: none; cursor: pointer;
+    color: rgba(255,255,255,0.65); transition: color 0.15s;
+    font-family: system-ui, sans-serif; font-size: 0.62rem; font-weight: 600;
+    letter-spacing: 0.02em; min-height: 56px; width: 100%;
+  }
+  .bnav-btn.active { color: #fff; }
+  .bnav-btn.active svg { stroke-width: 2.5; }
+  .bnav-btn:active { color: #B5F23D; }
+
+  /* Affiche la barre uniquement sur mobile */
+  @media(max-width:768px){
+    #bottomNav { display: grid !important; }
+    /* Espace en bas pour ne pas cacher le contenu */
+    .page main, .page > main { padding-bottom: 70px; }
+    /* Cache le burger — la barre du bas remplace */
+    .hdr__burger { display: none !important; }
+  }
+</style>
 <div class="modal" id="modal">
   <div class="modal__inner">
     <button class="modal__close" id="modalClose" aria-label="Fermer">
@@ -2344,7 +2389,7 @@ const FAQ=[
    a:'<strong>3 étapes simples :</strong><br><br>1. Scannez le QR code dans votre livre ou rendez-vous sur ce site<br>2. Entrez votre prénom, votre email et le code d\'accès inscrit dans les premières pages<br>3. Accédez immédiatement à l\'espace privé avec les 28 vidéos classées par zone anatomique<br><br>L\'accès est gratuit, sans abonnement, et fonctionne sur smartphone, tablette et ordinateur.'},
 
   {q:'Mon code d\'accès ne fonctionne pas',
-   a:'Vérifiez ces points :<br><br>• <strong>Majuscules :</strong> le code doit être saisi en majuscules (ex : MOVIFLEX50)<br>• <strong>Espaces :</strong> assurez-vous qu\'il n\'y a pas d\'espace avant ou après<br>• <strong>Emplacement :</strong> le code se trouve dans les premières ou dernières pages du livre<br><br>Si le problème persiste, contactez-nous avec une photo de votre commande Amazon : <a href="mailto:contact@moviflex13.com">contact@moviflex13.com</a>'},
+   a:'Vérifiez ces points :<br><br>• <strong>Majuscules :</strong> le code doit être saisi en majuscules<br>• <strong>Espaces :</strong> assurez-vous qu\'il n\'y a pas d\'espace avant ou après<br>• <strong>Emplacement :</strong> le code se trouve dans les premières ou dernières pages du livre<br><br>Si le problème persiste, contactez-nous avec une photo de votre commande Amazon : <a href="mailto:contact@moviflex13.com">contact@moviflex13.com</a>'},
 
   // COMMANDE
   {q:'Où commander le livre ?',
@@ -2403,86 +2448,72 @@ function showPage(p){
   if(p==='videos')   { renderVideos('all'); setTimeout(updateQuickNavVisibility,100); }
   if(p==='programme'){selectVoie(currentVoie||'A');renderProgramme();}
   if(p==='support')  renderFAQ();
-  // Masque le bouton flottant sur les autres pages
-  if(p!=='videos') { const b=document.getElementById('quickNavBtn'); if(b) b.style.display='none'; if(quickNavOpen) toggleQuickNav(); }
+  // Sync barre nav bas mobile
+  const bnavMap={accueil:'bnav-accueil',home:'bnav-home',videos:'bnav-home',programme:'bnav-prog',kit:'bnav-kit',support:'bnav-faq'};
+  document.querySelectorAll('.bnav-btn').forEach(b=>b.classList.remove('active'));
+  const activeBnav=bnavMap[p];
+  if(activeBnav){const b=document.getElementById(activeBnav);if(b)b.classList.add('active');}
 }
 
 // ── QUICK NAV FLOTTANT ───────────────────────────────
 let quickNavOpen = false;
 
-function toggleQuickNav(e){
-  if(e) e.stopPropagation();
-  quickNavOpen = !quickNavOpen;
+function _qnav_setOpen(open){
+  quickNavOpen = open;
   const panel = document.getElementById('quickNavPanel');
   const btn   = document.getElementById('quickNavBtn');
   if(!panel || !btn) return;
-  if(quickNavOpen){
-    panel.style.display = 'flex';
-    btn.style.background = '#1a4010';
-    btn.innerHTML = '<svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
-  } else {
-    closeQuickNav();
-  }
+  panel.style.display = open ? 'flex' : 'none';
+  btn.style.background = open ? '#1a4010' : 'var(--vert)';
+  btn.innerHTML = open
+    ? '<svg width="20" height="20" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
+    : '<svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>';
 }
 
-function closeQuickNav(){
-  quickNavOpen = false;
-  const panel = document.getElementById('quickNavPanel');
-  const btn   = document.getElementById('quickNavBtn');
-  if(panel) panel.style.display = 'none';
-  if(btn){
-    btn.style.background = 'var(--vert)';
-    btn.innerHTML = '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>';
-  }
-}
-
-function quickFilter(zone, e){
-  if(e) e.stopPropagation();
-
-  // 1. Filtre les vidéos
+function quickFilter(zone){
   renderVideos(zone);
-
-  // 2. Sync filtres du HAUT
-  document.querySelectorAll('.ftab').forEach(b=>{
-    b.classList.toggle('on', b.dataset.f === zone);
-  });
-
-  // 3. Sync boutons du panneau
-  document.querySelectorAll('.qnav-btn[data-qf]').forEach(b=>{
-    b.classList.toggle('qnav-active', b.dataset.qf === zone);
-  });
-
-  // 4. Scroll vers grille
-  const grid = document.getElementById('videoGrid');
-  if(grid) setTimeout(()=>grid.scrollIntoView({behavior:'smooth', block:'start'}), 50);
-
-  // 5. Ferme le panneau
-  closeQuickNav();
+  document.querySelectorAll('.ftab').forEach(b=>b.classList.toggle('on',b.dataset.f===zone));
+  document.querySelectorAll('.qnav-btn[data-qf]').forEach(b=>b.classList.toggle('qnav-active',b.dataset.qf===zone));
+  const grid=document.getElementById('videoGrid');
+  if(grid) setTimeout(()=>grid.scrollIntoView({behavior:'smooth',block:'start'}),50);
+  _qnav_setOpen(false);
 }
 
-// Sync inverse : quand on clique sur les onglets du HAUT → met à jour le panneau
-document.addEventListener('click', e=>{
-  const ftab = e.target.closest('.ftab');
-  if(ftab && ftab.dataset.f){
-    document.querySelectorAll('.qnav-btn[data-qf]').forEach(b=>{
-      b.classList.toggle('qnav-active', b.dataset.qf === ftab.dataset.f);
+function updateQuickNavVisibility(){
+  const btn=document.getElementById('quickNavBtn');
+  if(!btn) return;
+  const onVideos=document.getElementById('page-videos')?.classList.contains('active');
+  btn.style.display=(onVideos && window.scrollY>300)?'flex':'none';
+}
+window.addEventListener('scroll',updateQuickNavVisibility,{passive:true});
+
+// Bind proprement après chargement
+window.addEventListener('DOMContentLoaded',()=>{
+  // Bouton flottant
+  const qBtn=document.getElementById('quickNavBtn');
+  if(qBtn){
+    qBtn.addEventListener('click',e=>{
+      e.stopPropagation();
+      _qnav_setOpen(!quickNavOpen);
     });
   }
-  // Ferme panneau si clic extérieur
-  if(!e.target.closest('#quickNavPanel') && !e.target.closest('#quickNavBtn')){
-    if(quickNavOpen) closeQuickNav();
-  }
+  // Boutons zones dans le panneau
+  document.querySelectorAll('.qnav-btn[data-qf]').forEach(b=>{
+    b.addEventListener('click',e=>{
+      e.stopPropagation();
+      quickFilter(b.dataset.qf);
+    });
+  });
+  // Ferme si clic extérieur
+  document.addEventListener('click',e=>{
+    if(quickNavOpen
+      && !e.target.closest('#quickNavPanel')
+      && !e.target.closest('#quickNavBtn')){
+      _qnav_setOpen(false);
+    }
+  });
 });
 
-// Affiche le bouton flottant après 300px de scroll sur page vidéos
-function updateQuickNavVisibility(){
-  const btn = document.getElementById('quickNavBtn');
-  if(!btn) return;
-  const onVideos = document.getElementById('page-videos')?.classList.contains('active');
-  btn.style.display = (onVideos && window.scrollY > 300) ? 'flex' : 'none';
-}
-
-window.addEventListener('scroll', updateQuickNavVisibility, {passive:true});
 function openLegal(id){
   const m=document.getElementById('modal-legal-'+id);
   if(m){m.classList.add('open');document.body.style.overflow='hidden';}
@@ -2549,7 +2580,20 @@ document.getElementById('inp-code').addEventListener('input',()=>{
 });
 
 // ── LOGOUT ───────────────────────────────────────────
-function doLogout(){Sess.clear();showPage('home');}
+function doLogout(){
+  Sess.clear();
+  // Reset le bouton d'accès
+  const btn=document.getElementById('accessBtn');
+  if(btn){
+    btn.disabled=false;
+    btn.innerHTML='Accéder à mes vidéos <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+  }
+  // Reset les champs du formulaire
+  const fn=document.getElementById('inp-fn'); if(fn) fn.value='';
+  const em=document.getElementById('inp-em'); if(em) em.value='';
+  const cd=document.getElementById('inp-code'); if(cd) cd.value='';
+  showPage('home');
+}
 
 // ── MOBILE NAV ───────────────────────────────────────
 document.getElementById('burgerBtn').addEventListener('click',()=>document.getElementById('mnav').classList.add('open'));
