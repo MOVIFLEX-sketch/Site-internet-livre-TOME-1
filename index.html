@@ -2427,6 +2427,20 @@ function showPage(p){
   const activeNav=navMap[p];
   if(activeNav){const a=document.getElementById(activeNav);if(a)a.classList.add('on');}
 
+  // ── CTA Amazon dynamique ──────────────────────────────
+  // Page Produit MOVIFLEX → lien kit élastiques
+  // Toutes les autres pages → lien livre Amazon
+  const amazonBtn=document.getElementById('hdr-amazon-btn');
+  if(amazonBtn){
+    if(p==='kit'){
+      amazonBtn.href='https://www.amazon.fr/dp/VOTRE-ASIN-KIT?tag=VOTRE-TAG-AFFILIÉ';
+      amazonBtn.innerHTML='<svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M21.5 17.5c-.7.4-4.1 1.9-9.5 1.9s-9-.5-12.5-2.4c-.4-.2-.2-.6.1-.5 3 .8 5.9 1.1 8.9 1.1 4.5 0 8.5-.8 12-2.5.4-.2.7.1.9.4zm1.5-2.5c-.3-.4-2-1-3-1.2-.3-.1-.3-.4 0-.5 1.5-.5 4-.2 4.5.8.4.8-.8 2-1.5.9z"/></svg> Kit Élastiques';
+    } else {
+      amazonBtn.href='https://www.amazon.fr/dp/VOTRE-ASIN-ICI?tag=VOTRE-TAG-AFFILIÉ';
+      amazonBtn.innerHTML='<svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M21.5 17.5c-.7.4-4.1 1.9-9.5 1.9s-9-.5-12.5-2.4c-.4-.2-.2-.6.1-.5 3 .8 5.9 1.1 8.9 1.1 4.5 0 8.5-.8 12-2.5.4-.2.7.1.9.4zm1.5-2.5c-.3-.4-2-1-3-1.2-.3-.1-.3-.4 0-.5 1.5-.5 4-.2 4.5.8.4.8-.8 2-1.5.9z"/></svg> Acheter sur Amazon';
+    }
+  }
+
   // Header state
   const loggedIn=Sess.ok();
   const u=document.getElementById('hdr-user');
@@ -2445,9 +2459,17 @@ function showPage(p){
   // "Mon guide vidéo" : si connecté → vidéos, sinon → formulaire
   if(p==='home' && loggedIn){showPage('videos');return;}
 
-  if(p==='videos')   { renderVideos('all'); setTimeout(updateQuickNavVisibility,100); }
+  if(p==='videos')   { renderVideos('all'); setTimeout(updateQuickNavVisibility,300); }
   if(p==='programme'){selectVoie(currentVoie||'A');renderProgramme();}
   if(p==='support')  renderFAQ();
+
+  // Masque flottant sur pages autres que vidéos
+  if(p!=='videos'){
+    const qb=document.getElementById('quickNavBtn');
+    if(qb) qb.style.display='none';
+    _qnav_setOpen(false);
+  }
+
   // Sync barre nav bas mobile
   const bnavMap={accueil:'bnav-accueil',home:'bnav-home',videos:'bnav-home',programme:'bnav-prog',kit:'bnav-kit',support:'bnav-faq'};
   document.querySelectorAll('.bnav-btn').forEach(b=>b.classList.remove('active'));
@@ -2483,7 +2505,8 @@ function updateQuickNavVisibility(){
   const btn=document.getElementById('quickNavBtn');
   if(!btn) return;
   const onVideos=document.getElementById('page-videos')?.classList.contains('active');
-  btn.style.display=(onVideos && window.scrollY>300)?'flex':'none';
+  const threshold = window.innerWidth <= 768 ? 150 : 300;
+  btn.style.display=(onVideos && window.scrollY > threshold)?'flex':'none';
 }
 window.addEventListener('scroll',updateQuickNavVisibility,{passive:true});
 
